@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1 내 방명록
+	h2 글 작성하기
+		form(method='get', action='/write')
+			p 작성자
+			input(type='text', name='author')
+			p 내용
+			input(type='text', name='body')
+			button(type='submit') 작성
+	h2 글 목록
+	each article in result
+		div
+			p 번호 : #{article.articleId}
+			p 작성자 : #{article.author}
+			p 내용 : #{article.body}
